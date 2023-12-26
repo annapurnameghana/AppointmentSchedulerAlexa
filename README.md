@@ -17,3 +17,6 @@ Test the model :
 - If the time slot is not available it is known
 - If available then the appointment is booked
 
+Refer to this link:
+https://youtu.be/hKxPajo1vgI
+
