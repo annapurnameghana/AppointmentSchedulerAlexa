@@ -1,0 +1,191 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "inv scheduler",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "ScheduleIntent",
+                    "slots": [
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "{date}"
+                            ]
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.TIME",
+                            "samples": [
+                                "{time}"
+                            ]
+                        },
+                        {
+                            "name": "reason",
+                            "type": "reason",
+                            "samples": [
+                                "{reason}"
+                            ]
+                        },
+                        {
+                            "name": "nn",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{nn}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "i want to schedule an appointment on {date} at {time} for {reason} for {nn}  hours"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "reason",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "appointment"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "meeting"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "party"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "ScheduleIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.439997913417.814114142231"
+                            }
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.TIME",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.439997913417.760444000519"
+                            }
+                        },
+                        {
+                            "name": "reason",
+                            "type": "reason",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.639423635037.1353886734482"
+                            }
+                        },
+                        {
+                            "name": "nn",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.639423635037.593103855332"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.439997913417.814114142231",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "on what day do you want to have an appointment?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.439997913417.760444000519",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "at what time do you want to make an appointment "
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.639423635037.1353886734482",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What is the reason for the appointment?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.639423635037.593103855332",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "For how many hours?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.772584726951.82157297128",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What is the date?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.772584726951.1481063825674",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What is the time?"
+                    }
+                ]
+            }
+        ]
+    }
+}
